@@ -69,7 +69,7 @@ pipeline {
                     npm install -g heroku
                     ls -l /var/run/docker.sock
                     docker ps
-                    heroku login
+                    heroku container:login
                     '''
                 }
             } 
