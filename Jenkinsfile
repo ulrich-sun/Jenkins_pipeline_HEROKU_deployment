@@ -47,14 +47,6 @@ pipeline {
                 }
             } 
         }
-        stage('Install heroku CLI') {
-            agent any
-            steps {
-                script {
-                    sh 'npm install -g heroku'
-                }
-            } 
-        }
         stage('Push image in STAGING and Deploy') {
             when {
                 expression { GIT_BRANCH == 'origin/main'}
