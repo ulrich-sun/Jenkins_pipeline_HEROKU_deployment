@@ -4,7 +4,7 @@ pipeline {
         IMAGE_TAG = "latest"
         CONTAINER = "website"
         STAGING = "tonydja-staging"
-        PRODCUTION "tonydja-production"
+        PRODCUTION = "tonydja-production"
     }
     agent none
     stages {
