@@ -66,9 +66,6 @@ pipeline {
                     apk --no-cache add npm
                     npm install -g heroku
                     heroku container:login
-                    heroku create $STAGING || echo "project already exist"
-                    heroku container:push $STAGING $CONTAINER
-                    heroku container:release -a $STAGING $CONTAINER
                     '''
                 }
             } 
