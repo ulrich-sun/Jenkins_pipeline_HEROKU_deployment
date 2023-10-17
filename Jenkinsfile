@@ -70,7 +70,7 @@ pipeline {
                     docker ps
                     heroku container:login
                     heroku create $STAGING || echo "project already exist"
-                    heroku container:push $STAGING $CONTAINER
+                    heroku container:push -a $STAGING $CONTAINER
                     heroku container:release -a $STAGING $CONTAINER
                     '''
                 }
