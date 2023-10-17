@@ -16,6 +16,17 @@ pipeline {
                 }
             } 
         }
+        stage('Check and delete old containers') {
+            agent any
+            steps {
+                script {
+                    sh '''
+                    docker container stop $CONTAINER
+                    docker container rm $CONTAINER
+                    '''
+                }
+            } 
+        }
         stage('Run docker container based on build image') {
             agent any
             steps {
@@ -31,7 +42,7 @@ pipeline {
             agent any
             steps {
                 script {
-                    sh 'curl http://192.168.208.2:3000 | grep -q "Enjoy"'
+                    sh 'curl http://localhost:3000 | grep -q "Enjoy"'
                 }
             } 
         }
