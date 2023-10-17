@@ -61,7 +61,6 @@ pipeline {
             environment {
                 HEROKU_API_KEY = credentials('HEROKU_API_KEY')
             }
-            // docker login --username=tonydubernet --password-stdin=$HEROKU_TOKEN registry.heroku.com
             steps {
                 script {
                     sh '''
@@ -70,6 +69,9 @@ pipeline {
                     ls -l /var/run/docker.sock
                     docker ps
                     heroku container:login
+                    heroku create $STAGING || echo "project already exist"
+                    heroku container:push $STAGING $CONTAINER
+                    heroku container:release -a $STAGING $CONTAINER
                     '''
                 }
             } 
