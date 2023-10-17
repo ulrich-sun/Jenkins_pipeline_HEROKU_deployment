@@ -17,17 +17,6 @@ pipeline {
                 }
             } 
         }
-        stage('Check and delete old containers') {
-            agent any
-            steps {
-                script {
-                    sh '''
-                    docker container stop $CONTAINER
-                    docker container rm $CONTAINER
-                    '''
-                }
-            } 
-        }
         stage('Run docker container based on build image') {
             agent any
             steps {
