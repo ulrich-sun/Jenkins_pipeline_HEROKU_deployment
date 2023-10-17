@@ -66,7 +66,8 @@ pipeline {
                     sh '''
                     apk --no-cache add npm
                     npm install -g heroku
-                    docker ps
+                    ls -l /var/run/docker.sock
+                    //docker ps
                     heroku login
                     //docker login --username=tonydubernet --password-stdin=$HEROKU_TOKEN registry.heroku.com
                     '''
