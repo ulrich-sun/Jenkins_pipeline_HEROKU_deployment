@@ -1,5 +1,5 @@
 pipeline {
-    environnment {
+    environment {
         IMAGE_NAME = "tonydja/static-website"
         IMAGE_TAG = "latest"
         CONTAINER = "website"
@@ -51,7 +51,7 @@ pipeline {
                 expression { GET_BRANCH == 'origin/main'}
             }
             agent any
-            environnement {
+            environment {
                 HEROKU_API_KEY = credentials('heroku_api_key')
             }
             steps {
@@ -70,7 +70,7 @@ pipeline {
                 expression { GET_BRANCH == 'origin/main'}
             }
             agent any
-            environnement {
+            environment {
                 HEROKU_API_KEY = credentials('heroku_api_key')
             }
             steps {
