@@ -51,10 +51,8 @@ pipeline {
             when {
                 expression { GIT_BRANCH == 'origin/main'}
             }
-            agent {
-                docker {
+            agent docker {
                     image "franela/dind"
-                }
             }
             environment {
                 HEROKU_API_KEY = credentials('HEROKU_API_KEY')
