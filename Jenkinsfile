@@ -51,7 +51,7 @@ pipeline {
             agent any
             steps {
                 script {
-                    sh 'curl https://cli-assets.heroku.com/install-ubuntu.sh | sh'
+                    sh 'curl https://cli-assets.heroku.com/install.sh | sh'
                 }
             } 
         }
