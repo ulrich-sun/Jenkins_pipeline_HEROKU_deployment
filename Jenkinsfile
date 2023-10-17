@@ -5,6 +5,7 @@ pipeline {
         CONTAINER = "website"
         STAGING = "tonydja-staging"
         PRODCUTION = "tonydja-production"
+        LOCALHOST_DOCKER_NETWORK = "192.168.208.3"
     }
     agent none
     stages {
@@ -42,7 +43,7 @@ pipeline {
             agent any
             steps {
                 script {
-                    sh 'curl http://localhost:3000 | grep -q "Enjoy"'
+                    sh 'curl http://$LOCALHOST_DOCKER_NETWORK:3000 | grep -q "Enjoy"'
                 }
             } 
         }
