@@ -55,7 +55,7 @@ pipeline {
             agent {
                 docker {
                     image 'franela/dind'
-                    args '-u root:root'
+                    args '-u root:root --privileged -v /var/run/docker.sock:/var/run/docker.sock'
                     }
             }
             environment {
