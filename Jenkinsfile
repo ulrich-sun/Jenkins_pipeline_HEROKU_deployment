@@ -51,7 +51,9 @@ pipeline {
             when {
                 expression { GIT_BRANCH == 'origin/main'}
             }
-            agent any
+            agent  {
+                any { image 'franela/dind' }
+            }
             environment {
                 HEROKU_API_KEY = credentials('HEROKU_API_KEY')
             }
