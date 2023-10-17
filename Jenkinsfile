@@ -52,7 +52,13 @@ pipeline {
                 expression { GIT_BRANCH == 'origin/main'}
             }
             agent {
-                docker {image 'franela/dind'}
+                docker {
+                    image 'gradle:8.2.0-jdk17-alpine'
+                    // Run the container on the node specified at the
+                    // top-level of the Pipeline, in the same workspace,
+                    // rather than on a new node entirely:
+                    reuseNode true
+                }
             }
             environment {
                 HEROKU_API_KEY = credentials('HEROKU_API_KEY')
