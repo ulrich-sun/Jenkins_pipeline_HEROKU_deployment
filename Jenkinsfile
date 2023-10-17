@@ -47,6 +47,14 @@ pipeline {
                 }
             } 
         }
+        stage('Install Heroku CLI') {
+            agent any
+            steps {
+                script {
+                    sh 'curl https://cli-assets.heroku.com/install-ubuntu.sh | sh'
+                }
+            } 
+        }
         stage('Push image in STAGING and Deploy') {
             when {
                 expression { GIT_BRANCH == 'origin/main'}
