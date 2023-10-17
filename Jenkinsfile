@@ -49,7 +49,7 @@ pipeline {
         }
         stage('Push image in STAGING and Deploy') {
             when {
-                expression { GET_BRANCH == 'origin/main'}
+                expression { GIT_BRANCH == 'origin/main'}
             }
             agent any
             environment {
@@ -68,7 +68,7 @@ pipeline {
         }
         stage('Push image in PRODUCTION and Deploy') {
             when {
-                expression { GET_BRANCH == 'origin/main'}
+                expression { GIT_BRANCH == 'origin/main'}
             }
             agent any
             environment {
