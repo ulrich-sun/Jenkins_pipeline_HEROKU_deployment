@@ -66,12 +66,13 @@ pipeline {
                     sh '''
                     apk --no-cache add npm
                     npm install -g heroku
-                    heroku auth:login
-                    // docker login --username=tonydubernet --password-stdin=$HEROKU_TOKEN registry.heroku.com
+                    heroku login
+                    //docker login --username=tonydubernet --password-stdin=$HEROKU_TOKEN registry.heroku.com
                     '''
                 }
             } 
         }
+        /*
         stage('Push image in PRODUCTION and Deploy') {
             when {
                 expression { GIT_BRANCH == 'origin/main'}
@@ -98,5 +99,6 @@ pipeline {
                 }
             } 
         }
+        */
     }
 }
