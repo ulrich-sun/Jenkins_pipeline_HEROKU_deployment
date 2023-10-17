@@ -54,7 +54,7 @@ pipeline {
             agent {
                 docker {
                     image 'franela/dind'
-                    args '--privileged -u root:root'
+                    args '-u root:root'
                     }
             }
             environment {
@@ -65,6 +65,7 @@ pipeline {
                     sh '''
                     apk --no-cache add npm
                     npm install -g heroku
+                    export DOCKER_HOST="tcp://docker:2376"
                     heroku container:login
                     '''
                 }
