@@ -59,13 +59,14 @@ pipeline {
                     }
             }
             environment {
-                HEROKU_API_KEY = '$HEROKU_TOKEN'
+                HEROKU_API_KEY = credentials('HEROKU_API_KEY')
             }
             steps {
                 script {
                     sh '''
                     apk --no-cache add npm
                     npm install -g heroku
+                    docker ps
                     heroku login
                     //docker login --username=tonydubernet --password-stdin=$HEROKU_TOKEN registry.heroku.com
                     '''
