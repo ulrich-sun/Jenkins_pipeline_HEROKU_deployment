@@ -59,7 +59,7 @@ pipeline {
                     }
             }
             environment {
-                HEROKU_API_KEY = $HEROKU_TOKEN
+                HEROKU_API_KEY = '$HEROKU_TOKEN'
             }
             steps {
                 script {
