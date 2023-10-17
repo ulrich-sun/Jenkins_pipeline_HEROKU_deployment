@@ -52,7 +52,10 @@ pipeline {
                 expression { GIT_BRANCH == 'origin/main'}
             }
             agent {
-                docker { image 'franela/dind' }
+                docker {
+                    image 'franela/dind'
+                    args '-u root:root'
+                    }
             }
             environment {
                 HEROKU_API_KEY = credentials('HEROKU_API_KEY')
@@ -74,13 +77,20 @@ pipeline {
             when {
                 expression { GIT_BRANCH == 'origin/main'}
             }
-            agent any
+            agent {
+                docker {
+                    image 'franela/dind'
+                    args '-u root:root'
+                    }
+            }
             environment {
                 HEROKU_API_KEY = credentials('HEROKU_API_KEY')
             }
             steps {
                 script {
                     sh '''
+                    apk --no-cache add npm
+                    npm install -g heroku
                     heroku container:login
                     heroku create $PRODUCTION || echo "project already exist"
                     heroku container:push $PRODUCTION $CONTAINER
