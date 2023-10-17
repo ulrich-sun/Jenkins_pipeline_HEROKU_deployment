@@ -6,6 +6,7 @@ pipeline {
         STAGING = "tonydja-staging"
         PRODCUTION = "tonydja-production"
         LOCALHOST_DOCKER_NETWORK = "192.168.208.3"
+        HEROKU_TOKEN = credentials('HEROKU_API_KEY')
     }
     agent none
     stages {
@@ -58,15 +59,14 @@ pipeline {
                     }
             }
             environment {
-                HEROKU_API_KEY = credentials('HEROKU_API_KEY')
+                HEROKU_API_KEY = $HEROKU_TOKEN
             }
             steps {
                 script {
                     sh '''
                     apk --no-cache add npm
                     npm install -g heroku
-                    export DOCKER_HOST="tcp://docker:2376"
-                    heroku container:login
+                    docker login --username=tonydubernet --password=$HEROKU_TOKEN registry.heroku.com
                     '''
                 }
             } 
