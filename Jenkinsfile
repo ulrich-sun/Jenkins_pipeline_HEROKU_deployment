@@ -54,7 +54,7 @@ pipeline {
             agent {
                 docker {
                     image 'franela/dind'
-                    args '-u root:root'
+                    args '--privileged -u root:root'
                     }
             }
             environment {
