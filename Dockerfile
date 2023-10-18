@@ -7,7 +7,7 @@ LABEL org.opencontainers.image.authors="Tony DJA"
 
 # Ouverture du port 80
 #EXPOSE 80
-COPY static-html-directory /usr/share/nginx/html
+
 # Suppression des fichiers par défaut à la racine du serveur
 RUN rm -R /usr/share/nginx/html*
 RUN rm -R /etc/nginx/sites-available/*
