@@ -9,8 +9,9 @@ pipeline {
         HEROKU_TOKEN = credentials('HEROKU_API_KEY')
     }
     agent none
-    /*
+    
     stages {
+        /*
         stage('Build image') {
             agent any
             steps {
