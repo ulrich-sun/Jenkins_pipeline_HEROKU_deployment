@@ -72,8 +72,6 @@ pipeline {
                     heroku create $STAGING || echo "project already exist"
                     heroku container:push -a $STAGING $CONTAINER
                     heroku container:release -a $STAGING $CONTAINER
-                    sleep 10
-                    heroku logs --tail
                     '''
                 }
             } 
