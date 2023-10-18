@@ -15,4 +15,5 @@ RUN rm -R /var/www/html/*
 COPY . /var/www/html/
 
 # Exécution NGINX
-ENTRYPOINT [ "/usr/sbin/nginx", "-g", "daemon off;"]
+#ENTRYPOINT ["/script.sh"]
+CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
