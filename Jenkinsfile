@@ -61,7 +61,7 @@ pipeline {
                     }
             }
             environment {
-                HEROKU_API_KEY = $HEROKU_TOKEN
+                HEROKU_API_KEY = credentials('HEROKU_API_KEY')
             }
             steps {
                 script {
@@ -89,7 +89,7 @@ pipeline {
                     }
             }
             environment {
-                HEROKU_API_KEY = $HEROKU_TOKEN
+                HEROKU_API_KEY = credentials('HEROKU_API_KEY')
             }
             steps {
                 script {
