@@ -55,7 +55,7 @@ pipeline {
             agent {
                 docker {
                     image 'franela/dind'
-                    args '-u root:root --privileged -v /var/run/docker.sock:/var/run/docker.sock'
+                    args '-u root:root -v /var/run/docker.sock:/var/run/docker.sock'
                     }
             }
             environment {
@@ -76,7 +76,7 @@ pipeline {
                 }
             } 
         }
-        /*
+        
         stage('Push image in PRODUCTION and Deploy') {
             when {
                 expression { GIT_BRANCH == 'origin/main'}
@@ -84,7 +84,7 @@ pipeline {
             agent {
                 docker {
                     image 'franela/dind'
-                    args '-u root:root'
+                    args '-u root:root -v /var/run/docker.sock:/var/run/docker.sock'
                     }
             }
             environment {
@@ -95,14 +95,15 @@ pipeline {
                     sh '''
                     apk --no-cache add npm
                     npm install -g heroku
+                    ls -l /var/run/docker.sock
+                    docker ps
                     heroku container:login
                     heroku create $PRODUCTION || echo "project already exist"
-                    heroku container:push $PRODUCTION $CONTAINER
+                    heroku container:push -a $PRODUCTION $CONTAINER
                     heroku container:release -a $PRODUCTION $CONTAINER
                     '''
                 }
             } 
         }
-        */
     }
 }
