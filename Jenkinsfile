@@ -2,7 +2,7 @@ pipeline {
     environment {
         IMAGE_NAME = "tonydja/static-website"
         IMAGE_TAG = "latest"
-        CONTAINER = "website"
+        CONTAINER = "web"
         STAGING = "tonydja-staging"
         PRODCUTION = "tonydja-production"
         LOCALHOST_DOCKER_NETWORK = "192.168.208.3"
