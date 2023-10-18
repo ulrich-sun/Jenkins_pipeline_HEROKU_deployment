@@ -10,13 +10,14 @@ LABEL org.opencontainers.image.authors="Tony DJA"
 
 # Suppression des fichiers par défaut à la racine du serveur
 RUN rm -R /usr/share/nginx/html*
-RUN rm -R /etc/nginx/sites-available/*
-RUN rm /etc/nginx/nginx.conf
+#RUN rm -R /etc/nginx/sites-available/*
+#RUN rm /etc/nginx/nginx.conf
 
 # Copie du site web à la racine du serveur NGINX
 COPY . /usr/share/nginx/html
-COPY default /etc/nginx/sites-available/
-COPY nginx.conf /etc/nginx/
+#COPY default /etc/nginx/sites-available/
+COPY default /etc/nginx/conf.d/default.conf
+#COPY nginx.conf /etc/nginx/
 
 # Exécution NGINX
 #ENTRYPOINT ["/script.sh"]
