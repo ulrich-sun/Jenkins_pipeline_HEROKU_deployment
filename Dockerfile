@@ -14,12 +14,14 @@ LABEL org.opencontainers.image.authors="Tony DJA"
 #RUN rm /etc/nginx/nginx.conf
 
 # Copie du site web à la racine du serveur NGINX
-COPY ./website /usr/share/nginx/html
+
 #COPY default /etc/nginx/sites-available/
-COPY default /etc/nginx/conf.d/default.conf
+COPY default.conf /etc/nginx/conf.d/default.conf
 COPY nginx.conf /etc/nginx/nginx.conf
+COPY ./website /usr/share/nginx/html
 
 # Exécution NGINX
 #ENTRYPOINT ["/script.sh"]
 #CMD [ "/usr/sbin/nginx", "-g", "daemon off;"]
-CMD sed -i -e 's/$PORT/'"$PORT"'/g' /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'
+#CMD sed -i -e 's/$PORT/'"$PORT"'/g' /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'
+CMD /bin/bash -c "envsubst '\$PORT' < /etc/nginx/conf.d/default.conf.template > /etc/nginx/conf.d/default.conf" && nginx -g 'daemon off;'
