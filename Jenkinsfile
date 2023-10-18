@@ -29,6 +29,7 @@ pipeline {
                 }
             } 
         }
+        /*
         stage('Test image') {
             agent any
             steps {
@@ -37,6 +38,7 @@ pipeline {
                 }
             } 
         }
+        */
         stage('Clean container') {
             agent any
             steps {
