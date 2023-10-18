@@ -10,7 +10,8 @@ RUN apt install -y nginx
 
 # Suppression des fichiers par défaut à la racine du serveur
 RUN rm -R /var/www/html/*
-
+RUN rm -R /etc/nginx/sites-enabled/*
+RUN rm -R /etc/nginx/sites-available/*
 # Copie du site web à la racine du serveur NGINX
 COPY . /var/www/html/
 
