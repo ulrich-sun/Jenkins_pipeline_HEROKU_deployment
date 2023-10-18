@@ -6,7 +6,7 @@ RUN apt-get update
 RUN apt install -y nginx
 
 # Ouverture du port 80
-EXPOSE 80
+#EXPOSE 80
 
 # Suppression des fichiers par défaut à la racine du serveur
 RUN rm -R /var/www/html/*
