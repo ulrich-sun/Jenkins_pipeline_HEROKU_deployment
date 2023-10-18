@@ -41,6 +41,7 @@ pipeline {
             } 
         }
         */
+        /*
         stage('Clean container') {
             agent any
             steps {
@@ -52,6 +53,7 @@ pipeline {
                 }
             } 
         }
+        */
         stage('Push image in STAGING and Deploy') {
             when {
                 expression { GIT_BRANCH == 'origin/main'}
