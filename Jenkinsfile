@@ -61,7 +61,7 @@ pipeline {
                     }
             }
             environment {
-                HEROKU_API_KEY = credentials('HEROKU_API_KEY')
+                HEROKU_API_KEY = '$HEROKU_TOKEN'
             }
             steps {
                 script {
@@ -78,7 +78,6 @@ pipeline {
                 }
             } 
         }
-        /*
         stage('Push image in PRODUCTION and Deploy') {
             when {
                 expression { GIT_BRANCH == 'origin/main'}
@@ -90,7 +89,7 @@ pipeline {
                     }
             }
             environment {
-                HEROKU_API_KEY = credentials('HEROKU_API_KEY')
+                HEROKU_API_KEY = '$HEROKU_TOKEN'
             }
             steps {
                 script {
@@ -100,13 +99,12 @@ pipeline {
                     ls -l /var/run/docker.sock
                     docker ps
                     heroku container:login
-                    heroku create $PRODUCTION || echo "project already exist"
-                    heroku container:push -a $PRODUCTION $CONTAINER
-                    heroku container:release -a $PRODUCTION $CONTAINER
+                    heroku create $PRODCUTION || echo "project already exist"
+                    heroku container:push -a $PRODCUTION $CONTAINER_DYNOS_HEROKU
+                    heroku container:release -a $PRODCUTION $CONTAINER_DYNOS_HEROKU
                     '''
                 }
             } 
         }
-        */
     }
 }
