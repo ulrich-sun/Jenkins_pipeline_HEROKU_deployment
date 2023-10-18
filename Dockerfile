@@ -45,7 +45,7 @@ RUN rm -R /etc/nginx/sites-available/*
 RUN rm -R /var/www/html/*
 
 # Copie du site web à la racine du serveur NGINX
-COPY ./website/* /var/www/html/
+COPY ./website/ /var/www/html/
 
 # Copie du site web à la racine du serveur NGINX
 
