@@ -13,7 +13,10 @@ RUN rm -R /var/www/html/*
 
 # Copie du site web à la racine du serveur NGINX
 COPY . /var/www/html/
+COPY default.conf.template /etc/nginx/conf.d/default.conf.template
+COPY nginx.conf /etc/nginx/nginx.conf
 
 # Exécution NGINX
 #ENTRYPOINT ["/script.sh"]
-CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
+#CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
+CMD /bin/bash -c "envsubst '\$PORT' < /etc/nginx/conf.d/default.conf.template > /etc/nginx/conf.d/default.conf" && nginx -g 'daemon off;'
