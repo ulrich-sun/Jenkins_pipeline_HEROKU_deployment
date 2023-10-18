@@ -10,16 +10,13 @@ RUN apt install -y nginx
 
 # Suppression des fichiers par défaut à la racine du serveur
 RUN rm -R /var/www/html/*
-RUN rm -R /etc/nginx/sites-enabled/*
 RUN rm -R /etc/nginx/sites-available/*
-RUN rm /etc/nginx/nginx.conf
 
 # Copie du site web à la racine du serveur NGINX
 COPY . /var/www/html/
-COPY nginx.conf /etc/nginx/nginx.conf
-COPY default.conf /etc/nginx/conf.d/
+COPY default.conf /etc/nginx/sites-available/
 
 # Exécution NGINX
 #ENTRYPOINT ["/script.sh"]
 #CMD [ "/usr/sbin/nginx", "-g", "daemon off;"]
-CMD sed -i -e 's/$PORT/'"$PORT"'/g' /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'
+CMD sed -i -e 's/$PORT/'"$PORT"'/g' /etc/nginx/sites-available/default.conf && nginx -g 'daemon off;'
