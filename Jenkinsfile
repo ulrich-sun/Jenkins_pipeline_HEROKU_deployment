@@ -2,7 +2,8 @@ pipeline {
     environment {
         IMAGE_NAME = "tonydja/static-website"
         IMAGE_TAG = "latest"
-        CONTAINER = "web"
+        CONTAINER = "website"
+        CONTAINER_DYNOS_HEROKU = "web"
         STAGING = "tonydja-staging"
         PRODCUTION = "tonydja-production"
         LOCALHOST_DOCKER_NETWORK = "192.168.208.3"
@@ -11,7 +12,6 @@ pipeline {
     agent none
     
     stages {
-        /*
         stage('Build image') {
             agent any
             steps {
@@ -20,8 +20,6 @@ pipeline {
                 }
             } 
         }
-        */
-        /*
         stage('Run docker container based on build image') {
             agent any
             steps {
@@ -33,8 +31,6 @@ pipeline {
                 }
             } 
         }
-        */
-        /*
         stage('Test image') {
             agent any
             steps {
@@ -43,8 +39,6 @@ pipeline {
                 }
             } 
         }
-        */
-        /*
         stage('Clean container') {
             agent any
             steps {
@@ -56,7 +50,6 @@ pipeline {
                 }
             } 
         }
-        */
         stage('Push image in STAGING and Deploy') {
             when {
                 expression { GIT_BRANCH == 'origin/main'}
@@ -79,8 +72,8 @@ pipeline {
                     docker ps
                     heroku container:login
                     heroku create $STAGING || echo "project already exist"
-                    heroku container:push -a $STAGING $CONTAINER
-                    heroku container:release -a $STAGING $CONTAINER
+                    heroku container:push -a $STAGING $CONTAINER_DYNOS_HEROKU
+                    heroku container:release -a $STAGING $CONTAINER_DYNOS_HEROKU
                     '''
                 }
             } 

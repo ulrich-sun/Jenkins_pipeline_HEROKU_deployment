@@ -1,8 +1,8 @@
 {
-    "name": "heroku-docker-nginx-test",
-    "description": "nginx deployment using Docker",
+    "name": "website-nginx-jenkins-pipeline",
+    "description": "Web site deployment on HEROKU within Jenkins pipeline",
     "repository": "https://github.com/Tony-Dja/Jenkins_pipeline_webhook_deployment",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Nginx_logo.svg",
-    "keywords": ["nginx", "docker", "proxy"],
+    "keywords": ["nginx", "docker", "jenkins", "pipeline", "website"],
     "stack": "container"
   }
