@@ -9,6 +9,7 @@ pipeline {
         HEROKU_TOKEN = credentials('HEROKU_API_KEY')
     }
     agent none
+    /*
     stages {
         stage('Build image') {
             agent any
@@ -18,6 +19,7 @@ pipeline {
                 }
             } 
         }
+        */
         /*
         stage('Run docker container based on build image') {
             agent any
