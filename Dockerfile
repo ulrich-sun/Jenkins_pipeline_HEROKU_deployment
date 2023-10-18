@@ -1,4 +1,4 @@
-FROM nginx
+FROM nginx:1.23.3
 LABEL org.opencontainers.image.authors="Tony DJA"
 
 # Installation serveur NGINX
@@ -9,15 +9,15 @@ LABEL org.opencontainers.image.authors="Tony DJA"
 #EXPOSE 80
 
 # Suppression des fichiers par défaut à la racine du serveur
-RUN rm -R /usr/share/nginx/html*
+#RUN rm -R /usr/share/nginx/html*
 #RUN rm -R /etc/nginx/sites-available/*
 #RUN rm /etc/nginx/nginx.conf
 
 # Copie du site web à la racine du serveur NGINX
-COPY . /usr/share/nginx/html
+COPY ./website /usr/share/nginx/html
 #COPY default /etc/nginx/sites-available/
 COPY default /etc/nginx/conf.d/default.conf
-#COPY nginx.conf /etc/nginx/
+COPY nginx.conf /etc/nginx/nginx.conf
 
 # Exécution NGINX
 #ENTRYPOINT ["/script.sh"]
