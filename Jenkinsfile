@@ -18,6 +18,7 @@ pipeline {
                 }
             } 
         }
+        /*
         stage('Run docker container based on build image') {
             agent any
             steps {
@@ -29,6 +30,7 @@ pipeline {
                 }
             } 
         }
+        */
         /*
         stage('Test image') {
             agent any
