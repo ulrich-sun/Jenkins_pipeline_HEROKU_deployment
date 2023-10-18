@@ -19,4 +19,4 @@ COPY default /etc/nginx/sites-available/
 # Exécution NGINX
 #ENTRYPOINT ["/script.sh"]
 #CMD [ "/usr/sbin/nginx", "-g", "daemon off;"]
-CMD sed -i -e 's/$PORT/'"$PORT"'/g' /etc/nginx/sites-available/default && nginx -g 'daemon off;'
+#CMD sed -i -e 's/$PORT/'"$PORT"'/g' /etc/nginx/sites-available/default && nginx -g 'daemon off;'
