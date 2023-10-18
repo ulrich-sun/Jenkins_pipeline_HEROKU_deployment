@@ -16,7 +16,7 @@ LABEL org.opencontainers.image.authors="Tony DJA"
 # Copie du site web à la racine du serveur NGINX
 
 #COPY default /etc/nginx/sites-available/
-COPY default.conf /etc/nginx/conf.d/default.conf
+COPY default.conf.template /etc/nginx/conf.d/default.conf.template
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY ./website /usr/share/nginx/html
 
