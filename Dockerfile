@@ -17,7 +17,7 @@ RUN rm -R /var/www/html/*
 # Copie du site web à la racine du serveur NGINX
 COPY ./website/ /var/www/html/
 
-# Suppression d'un nouveau fichier de config comprenant la variable d'environnement $PORT
+# Ajout d'un nouveau fichier de config comprenant la variable d'environnement $PORT
 COPY default /etc/nginx/sites-available/
 
 # Lancement => Insertion de la variable d'environnement $PORT dans le fichier de config et Exécution de NGINX

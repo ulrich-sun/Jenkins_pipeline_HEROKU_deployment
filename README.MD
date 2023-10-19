@@ -32,13 +32,13 @@ For the installation of the Jenkins Server on your local machine, you can check 
 
 
 <br />
-<br />
+
 
 HEROKU deployment constraint
 ----------------------
 
-When you deploy a web server App on HEROKU, you don't have the permission to bind the default port 80.<br />
-HEROKU automatically assigns a binding port for your web server and renews it with each new deployment.<br /><br />
+When you deploy a web server on HEROKU, you don't have the permission to bind the default port 80.<br />
+HEROKU automatically assigns a binding port for your web server and renew it with each new deployment.<br /><br />
 To bypass this rule you must create a dynamic environment variable which will retrieve the value that HEROKU returns to you, and insert into your NGINX config file when you launch your App.<br/>
 This is what we are going to put in place.
 
@@ -51,3 +51,55 @@ To deploy your HTML web site in a Docker container, we are going to follow these
 - Create a Dockerfile with an Ubuntu image
 - Install NGINX server
 - Edit the NGINX config file to add an environnement variable
+- Replace the default NGINX config file
+- Retrieve the value of the environnement variable "PORT" return by HEROKU and insert into your config file
+
+
+Dockerfile
+----------------------
+
+Here is the dockerfile with which we create our container embedding the NGINX server and the website files :
+
+```
+FROM ubuntu
+LABEL org.opencontainers.image.authors="Tony DJA"
+
+RUN apt-get update
+RUN apt install -y nginx
+
+ENV PORT=80
+
+RUN rm -R /etc/nginx/sites-available/*
+RUN rm -R /var/www/html/*
+
+COPY ./website/ /var/www/html/
+COPY default /etc/nginx/sites-available/
+
+CMD sed -i -e 's/$PORT/'"$PORT"'/g' /etc/nginx/sites-available/default && nginx -g 'daemon off;'
+```
+
+# Docker image
+FROM ubuntu
+LABEL org.opencontainers.image.authors="Tony DJA"
+
+# NGINX installation
+RUN apt-get update
+RUN apt install -y nginx
+
+# Create the "PORT" environnement variable and assign a default value
+ENV PORT=80
+
+# Delete the NGINX default configuration file
+RUN rm -R /etc/nginx/sites-available/*
+
+# Delete all default files in the root folder of the web server
+RUN rm -R /var/www/html/*
+
+# Add you HTML files into the root folder of the web server
+COPY ./website/ /var/www/html/
+
+# Add your new NGINX default configuration file including the "PORT" environnement variable
+COPY default /etc/nginx/sites-available/
+
+# Launch your Web server => Inserting the value of "PORT" that HEROKU returns and insert it into your NGINX configuration file
+CMD sed -i -e 's/$PORT/'"$PORT"'/g' /etc/nginx/sites-available/default && nginx -g 'daemon off;'
