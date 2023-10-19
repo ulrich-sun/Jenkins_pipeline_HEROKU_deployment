@@ -101,3 +101,11 @@ COPY default /etc/nginx/sites-available/
 
 - <strong>Launch your Web server => Inserting the value of "PORT" that HEROKU returns and insert it into your NGINX configuration file</strong><br/>
 CMD sed -i -e 's/$PORT/'"$PORT"'/g' /etc/nginx/sites-available/default && nginx -g 'daemon off;'
+
+
+
+# Jenkins pipeline
+
+Now create a new Jenkins pipeline :
+
+<img src="https://github.com/Tony-Dja/Jenkins_pipeline_HEROKU_deployment/blob/0adec933a113d173feee80d45760aa90133d1969/screenshots/heroku.png">
