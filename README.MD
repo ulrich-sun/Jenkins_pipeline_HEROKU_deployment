@@ -34,8 +34,8 @@ For the installation of the Jenkins Server on your local machine, you can check 
 <br />
 
 
-# HEROKU deployment constraint
-
+HEROKU deployment constraint
+----------------------
 
 When you deploy a web server on HEROKU, you don't have the permission to bind the default port 80.<br />
 HEROKU automatically assigns a binding port for your web server and renew it with each new deployment.<br /><br />
@@ -43,7 +43,8 @@ To bypass this rule you must create a dynamic environment variable which will re
 This is what we are going to put in place.
 
 
-# Contenerization of your web site
+Contenerization of your web site
+----------------------
 
 To deploy your HTML web site in a Docker container, we are going to follow these steps :<br />
 
@@ -54,7 +55,8 @@ To deploy your HTML web site in a Docker container, we are going to follow these
 - Retrieve the value of the environnement variable "PORT" return by HEROKU and insert into your config file
 
 
-# Dockerfile
+Dockerfile
+----------------------
 
 Here is the dockerfile with which we create our container embedding the NGINX server and the website files :
 
@@ -104,7 +106,8 @@ CMD sed -i -e 's/$PORT/'"$PORT"'/g' /etc/nginx/sites-available/default && nginx 
 
 
 
-# Jenkins pipeline
+Jenkins pipeline
+----------------------
 
 Now create a new Jenkins pipeline :
 
