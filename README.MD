@@ -116,6 +116,7 @@ Now create a new Jenkins pipeline :
 <img src="https://github.com/Tony-Dja/Jenkins_pipeline_HEROKU_deployment/blob/2ae6577ad323867502813f28217c39b25966acd6/screenshots/jenkins-pipeline.png">
 
 </div>
+<br/>
 
 To trigger the launch of our pipeline from an action carried out on GitHub we will create a WebHook.<br/>
 For this you need to configure 2 things :
@@ -128,6 +129,7 @@ For this you need to configure 2 things :
 <img src="https://github.com/Tony-Dja/Jenkins_pipeline_HEROKU_deployment/blob/8f62bd61181002c376faef94119a78d8a9f2c3a7/screenshots/trigger.png">
 
 </div>
+<br/>
 
 <strong>Install Jenkins plugins : </strong>
 
@@ -145,7 +147,7 @@ The 4 plugins you have to install :
 
 <div align="center">
 
-<img src="https://github.com/Tony-Dja/Jenkins_pipeline_HEROKU_deployment/blob/8f62bd61181002c376faef94119a78d8a9f2c3a7/screenshots/trigger.png">
+<img src="https://github.com/Tony-Dja/Jenkins_pipeline_HEROKU_deployment/blob/44e36b6df648f593d3fc6b255009fb7cd8b5e720/screenshots/jenkins-plugins.png">
 
 </div>
 
