@@ -23,12 +23,12 @@ Website contenerization + JENKINS pipeline + HEROKU deployment
 
 </div>
  <br />
-Containerization of a website with Docker and NGINX | Create a Jenkins pipeline | Deploy App on HEROKU<br /><br />
+Containerization of a website with Docker and NGINX + Create a Jenkins pipeline + Deploying App on HEROKU<br /><br />
 
 
 For the installation of the Jenkins Server on your local machine, you can check my repo : <br />
 
-=> https://github.com/Tony-Dja/Jenkins_CI-CD_pipeline
+- https://github.com/Tony-Dja/Jenkins_CI-CD_pipeline
 
 
 <br />
