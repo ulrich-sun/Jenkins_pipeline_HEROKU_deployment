@@ -128,7 +128,7 @@ Public IP address
 Your local machine does not have a public IP address.<br/>
 To link your Github repository and your Jenkins pipeline we need to create a relay with a public IP address and which will redirect Github notifications directly to our local Jenkins server in order to trigger the pipeline.
 
-To make this, we are going to install "NGROCK".<br/>
+To make this way, you have to install "NGROCK".<br/>
 This tool will allow us to have a public IP map directly with our local machine
 
 <div align="center">
