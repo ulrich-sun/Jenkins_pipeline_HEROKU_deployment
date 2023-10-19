@@ -76,28 +76,28 @@ COPY default /etc/nginx/sites-available/
 CMD sed -i -e 's/$PORT/'"$PORT"'/g' /etc/nginx/sites-available/default && nginx -g 'daemon off;'
 ```
 
-- Docker image
+- <strong>Docker image</strong><br/>
 FROM ubuntu
 LABEL org.opencontainers.image.authors="Tony DJA"
 
-- NGINX installation
+- <strong>NGINX installation</strong><br/>
 RUN apt-get update
 RUN apt install -y nginx
 
-- Create the "PORT" environnement variable and assign a default value
+- <strong>Create the "PORT" environnement variable and assign a default value</strong><br/>
 ENV PORT=80
 
-- Delete the NGINX default configuration file
+- <strong>Delete the NGINX default configuration file</strong><br/>
 RUN rm -R /etc/nginx/sites-available/*
 
-- Delete all default files in the root folder of the web server
+- <strong>Delete all default files in the root folder of the web server</strong><br/>
 RUN rm -R /var/www/html/*
 
-- Add you HTML files into the root folder of the web server
+- <strong>Add you HTML files into the root folder of the web server</strong><br/>
 COPY ./website/ /var/www/html/
 
-- Add your new NGINX default configuration file including the "PORT" environnement variable
+- <strong>Add your new NGINX default configuration file including the "PORT" environnement variable</strong><br/>
 COPY default /etc/nginx/sites-available/
 
-- Launch your Web server => Inserting the value of "PORT" that HEROKU returns and insert it into your NGINX configuration file
+- <strong>Launch your Web server => Inserting the value of "PORT" that HEROKU returns and insert it into your NGINX configuration file</strong><br/>
 CMD sed -i -e 's/$PORT/'"$PORT"'/g' /etc/nginx/sites-available/default && nginx -g 'daemon off;'
