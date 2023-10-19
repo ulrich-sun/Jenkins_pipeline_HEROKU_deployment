@@ -188,7 +188,29 @@ ngrok http http://localhost:8080
 <br/>
 
 Your public address is the https "Forwarding" address.<br/>
-You can check that all is ok into your browser. You must arrive on your jenkins server.
+You can check that everything works into your browser. You must arrive on your jenkins server.
+
+<div align="center">
+
+<img src="https://github.com/Tony-Dja/Jenkins_pipeline_HEROKU_deployment/blob/c7694ba66bf3d8b245a6eb1b24fd21bd0097b630/screenshots/jenkins-server.png">
+
+</div>
+
+
+Github WebHook
+----------------------
+
+<strong>1 - Create a WebHook</strong>
+
+Use the forwarding address from ngrok
+
+<div align="center">
+
+<img src="https://github.com/Tony-Dja/Jenkins_pipeline_HEROKU_deployment/blob/c7694ba66bf3d8b245a6eb1b24fd21bd0097b630/screenshots/jenkins-server.png">
+
+</div>
+
+<strong>2 - Check if the WebHook is connected with your Jenkins server</strong>
 
 <div align="center">
 
