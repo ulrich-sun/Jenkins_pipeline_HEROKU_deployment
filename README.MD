@@ -128,7 +128,7 @@ Public IP address
 Your local machine does not have a public IP address.<br/>
 To link your Github repository and your Jenkins pipeline we need to create a relay with a public IP address and which will redirect Github notifications directly to our local Jenkins server in order to trigger the pipeline.
 
-To make this way, you have to install "NGROCK".<br/>
+To make this way, you have to install "NGROK".<br/>
 This tool will allow us to have a public IP map directly with our local machine
 
 <div align="center">
@@ -139,7 +139,7 @@ This tool will allow us to have a public IP map directly with our local machine
 </div>
 <br/>
 
-<strong>1 - First, create your account on ngrock.com :</strong>
+<strong>1 - First, create your account on ngrok.com :</strong>
 
 - <a href="https://ngrok.com/" target="_blank">https://ngrok.com/</a>
 <br/>
@@ -166,14 +166,14 @@ curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc | \
 ```
 <br/>
 
-<strong>4 - Connect the agent with your NGROCK account :</strong>
+<strong>4 - Connect the agent with your NGROK account :</strong>
 
 ```
 ngrok config add-authtoken <TOKEN>
 ```
 <br/>
 
-<strong>5 - Connect your local machine to NGROCK :</strong>
+<strong>5 - Connect your local machine to NGROK :</strong>
 
 ```
 ngrok http http://localhost:8080
@@ -209,11 +209,36 @@ Use the forwarding address from ngrok
 <img src="https://github.com/Tony-Dja/Jenkins_pipeline_HEROKU_deployment/blob/0b040058be5819e1e61dd1a6d10e215b89f7a2fc/screenshots/webhook.png">
 
 </div>
+<br/>
 
 <strong>2 - Check if the WebHook is connected with your Jenkins server</strong>
+
+Now, for each "Push action" on your GitHub repo, the trigger will start automically the execution of the jenkins pipeline.
 
 <div align="center">
 
 <img src="https://github.com/Tony-Dja/Jenkins_pipeline_HEROKU_deployment/blob/0b040058be5819e1e61dd1a6d10e215b89f7a2fc/screenshots/webhook-check.png">
 
 </div>
+
+
+HEROKU Cloud Platform
+----------------------
+
+To be able to deploy our web server on the Cloud, we have to create an account on HEROKU :
+
+- <a href="https://www.heroku.com/" target="_blank">https://www.heroku.com/</a>
+
+After creating your account, you have to recover and copy you API key, which will allow us to authenticate with the heroku CLI from the Jenkis pipeline.
+
+<div align="center">
+
+<img src="https://github.com/Tony-Dja/Jenkins_pipeline_HEROKU_deployment/blob/0b040058be5819e1e61dd1a6d10e215b89f7a2fc/screenshots/webhook-check.png">
+
+</div>
+
+Jenkins file
+----------------------
+
+All the pipeline is configured in the Jenkins file.
+
