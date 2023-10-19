@@ -111,7 +111,11 @@ Jenkins pipeline
 
 Now create a new Jenkins pipeline :
 
+<div align="center">
+
 <img src="https://github.com/Tony-Dja/Jenkins_pipeline_HEROKU_deployment/blob/2ae6577ad323867502813f28217c39b25966acd6/screenshots/jenkins-pipeline.png">
+
+</div>
 
 To trigger the launch of our pipeline from an action carried out on GitHub we will create a WebHook.<br/>
 For this you need to configure 2 things :
@@ -119,7 +123,31 @@ For this you need to configure 2 things :
 - Enter the URL of your Github repository
 - Enable reception of github hook trigger
 
+<div align="center">
+
 <img src="https://github.com/Tony-Dja/Jenkins_pipeline_HEROKU_deployment/blob/8f62bd61181002c376faef94119a78d8a9f2c3a7/screenshots/trigger.png">
+
+</div>
+
+<strong>Install Jenkins plugins : </strong>
+
+We adding 4 plugins to run the pipeline and allow it to perform these actions : 
+- Build Docker Image and run containers
+- Make a http request to test your image
+- Use a Docker agent
+- Installing the HEROKU CLI and push to the CLOUD
+
+The 4 plugins you have to install :
+- Docker
+- Docker build step
+- Docker pipeline
+- Http request
+
+<div align="center">
+
+<img src="https://github.com/Tony-Dja/Jenkins_pipeline_HEROKU_deployment/blob/8f62bd61181002c376faef94119a78d8a9f2c3a7/screenshots/trigger.png">
+
+</div>
 
 
 Public IP address
@@ -244,7 +272,7 @@ Create new credentials with the ID "HEROKU_API_KEY".
 
 <div align="center">
 
-<img src="https://github.com/Tony-Dja/Jenkins_pipeline_HEROKU_deployment/blob/649dc12fad74aa452500865bba8cbe07369d21ef/screenshots/heroku-api.png">
+<img src="https://github.com/Tony-Dja/Jenkins_pipeline_HEROKU_deployment/blob/7670fb0a1d019a217c96c4d4c24e49472a631aa6/screenshots/jenkins-credentials.png">
 
 </div>
 

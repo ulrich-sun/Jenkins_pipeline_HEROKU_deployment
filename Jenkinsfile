@@ -7,7 +7,6 @@ pipeline {
         STAGING = "tonydja-staging"
         PRODCUTION = "tonydja-production"
         LOCALHOST_DOCKER_NETWORK = "192.168.208.3"
-        HEROKU_TOKEN = credentials('HEROKU_API_KEY')
     }
     agent none
     
