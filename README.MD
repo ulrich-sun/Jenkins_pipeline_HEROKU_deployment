@@ -27,4 +27,27 @@ Creation of a Jenkins pipeline + Deploying App on HEROKU
 Containerization of a website with Docker and NGINX + Create a Jenkins pipeline + Deploy App on HEROKU<br />
 
 
+For the installation of the Jenkins Server on your local machine, you can check my repo : <br />
+```
+<a href="https://github.com/Tony-Dja/Jenkins_CI-CD_pipeline" target="_blank">https://github.com/Tony-Dja/Jenkins_CI-CD_pipeline</a>
+```
 
+<br />
+<br />
+HEROKU deployment constraint
+----------------------
+
+When you deploy a web server App on HEROKU, you don't have the permission to bind the default port 80.<br />
+HEROKU automatically assigns a binding port for your web server and renews it with each new deployment.<br /><br />
+To bypass this rule you must create a dynamic environment variable which will retrieve the value that HEROKU returns to you.<br/>
+This is what we are going to put in place.
+
+
+Contenerization of your web site
+----------------------
+
+To deploy your HTML web site in a Docker container, we are going to follow these steps :<br />
+
+- Create a Dockerfile with an Ubuntu image
+- Install NGINX server
+- Edit the NGINX config file to add an environnement variable
