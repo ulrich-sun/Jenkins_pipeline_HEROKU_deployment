@@ -206,7 +206,7 @@ Use the forwarding address from ngrok
 
 <div align="center">
 
-<img src="https://github.com/Tony-Dja/Jenkins_pipeline_HEROKU_deployment/blob/c7694ba66bf3d8b245a6eb1b24fd21bd0097b630/screenshots/jenkins-server.png">
+<img src="https://github.com/Tony-Dja/Jenkins_pipeline_HEROKU_deployment/blob/0b040058be5819e1e61dd1a6d10e215b89f7a2fc/screenshots/webhook.png">
 
 </div>
 
@@ -214,6 +214,6 @@ Use the forwarding address from ngrok
 
 <div align="center">
 
-<img src="https://github.com/Tony-Dja/Jenkins_pipeline_HEROKU_deployment/blob/c7694ba66bf3d8b245a6eb1b24fd21bd0097b630/screenshots/jenkins-server.png">
+<img src="https://github.com/Tony-Dja/Jenkins_pipeline_HEROKU_deployment/blob/0b040058be5819e1e61dd1a6d10e215b89f7a2fc/screenshots/webhook-check.png">
 
 </div>
