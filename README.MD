@@ -13,7 +13,7 @@
 </div>
 
 
-Website contenerization + JENKINS pipeline + HEROKU deployment
+Website containerization + JENKINS pipeline + HEROKU deployment
 ----------------------
 
  <br />
@@ -23,7 +23,7 @@ Website contenerization + JENKINS pipeline + HEROKU deployment
 
 </div>
  <br />
-Containerization of a website with Docker and NGINX + Create a Jenkins pipeline + Deploying App on HEROKU<br /><br />
+Containerization of a website with Docker and NGINX + Build a Jenkins pipeline + Deploying App on HEROKU Cloud Platform<br /><br />
 
 
 For the installation of the Jenkins Server on your local machine, you can check my repo : <br />
@@ -43,7 +43,7 @@ To bypass this rule you must create a dynamic environment variable which will re
 This is what we are going to put in place.
 
 
-Contenerization of your web site
+Containerization of your web site
 ----------------------
 
 To deploy your HTML web site in a Docker container, we are going to follow these steps :<br />
