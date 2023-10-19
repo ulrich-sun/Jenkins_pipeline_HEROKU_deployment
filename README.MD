@@ -413,3 +413,100 @@ pipeline {
 }
 ```
 
+<strong>Local Docker network IP</strong>
+
+Before testing your image with a http request you have to put your own local Docker network IP into the environnement variable "LOCAL_DOCKER_NETWORK".<br/>
+To retrieve this address on your local machine, you just have to inspect your docker container :
+
+```
+docker ps
+docker inspect <name of container where the Docker daemon is running>"
+```
+
+After doing this action, you can uncomment the "Test image" stage.
+
+
+<strong>Heroku dynos</strong>
+
+Never change the value "web" of the variable "CONTAINER_DYNOS_HEROKU"<br/><br/>
+The dynos is in fact a special name for naming containers on HEROKU Cloud platform. And "web" is a type of container that launching a web process. We need it for making NGINX working correctly.
+
+
+<strong>Other environnement variables</strong>
+
+You can change the other environnement variables as you wish.
+
+
+<strong>STAGING and PRODUCTION deployment</strong>
+
+Just an important step. For deploy our App in these 2 stages, we use a Docker agent with a franela/dind image.<br/>
+We must run the stages into a Docker container to be able to install the HEROKU CLI, log in and push.
+<br />
+
+To deploy the container you must log in to root user and mouting a volume to map the Docker socket on the host machine to the container
+
+```
+args '-u root:root -v /var/run/docker.sock:/var/run/docker.sock'
+```
+
+Installing HEROKU CLI
+
+```
+apk --no-cache add npm
+npm install -g heroku
+```
+
+Add traces to log to check the Docker socket is connected
+```
+ls -l /var/run/docker.sock
+docker ps
+```
+
+Login to HEROKU and Deploy App
+
+```
+heroku container:login
+heroku create $STAGING || echo "project already exist"
+heroku container:push -a $STAGING $CONTAINER_DYNOS_HEROKU
+heroku container:release -a $STAGING $CONTAINER_DYNOS_HEROKU
+```
+
+
+Run the pipeline and deploy
+----------------------
+
+Make a push on GitHub repository or run the pipeline manually into Jenkins.
+
+You can check the Stage view into Jenkins
+
+<div align="center">
+
+<img src="https://github.com/Tony-Dja/Jenkins_pipeline_HEROKU_deployment/blob/649dc12fad74aa452500865bba8cbe07369d21ef/screenshots/jenkins-stage.png">
+
+</div>
+
+When the pipeline is finished, go to your HEROKU account and check that your 2 applications STAGING and PRODUCTION are well deployed.
+
+<div align="center">
+
+<img src="https://github.com/Tony-Dja/Jenkins_pipeline_HEROKU_deployment/blob/9b6e3bd78628b7540782098caf9b472513828b09/screenshots/heroku-stage.png">
+
+</div>
+
+Click on it and check that your web Dyno is ON.
+
+Click on the "open App" button.
+
+<div align="center">
+
+<img src="https://github.com/Tony-Dja/Jenkins_pipeline_HEROKU_deployment/blob/9b6e3bd78628b7540782098caf9b472513828b09/screenshots/heroku-stage.png">
+
+</div>
+
+Enjoy !
+
+<div align="center">
+
+<img src="https://github.com/Tony-Dja/Jenkins_pipeline_HEROKU_deployment/blob/9b6e3bd78628b7540782098caf9b472513828b09/screenshots/heroku-stage.png">
+
+</div>
