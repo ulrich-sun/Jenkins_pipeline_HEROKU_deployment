@@ -1,0 +1,8 @@
+website/
+screenshots/
+app.json
+default
+heroku.yml
+Jenkinsfile
+LICENSE.MD
+README.MD
