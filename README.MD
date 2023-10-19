@@ -121,11 +121,19 @@ For this you need to configure 2 things :
 
 <img src="https://github.com/Tony-Dja/Jenkins_pipeline_HEROKU_deployment/blob/8f62bd61181002c376faef94119a78d8a9f2c3a7/screenshots/trigger.png">
 
+
+Public IP address
+----------------------
+
 Your local machine does not have a public IP address.<br/>
 To link your Github repository and your Jenkins pipeline we need to create a relay with a public IP address and which will redirect Github notifications directly to our local Jenkins server in order to trigger the pipeline.
 
 To make this, we are going to install "NGROCK".<br/>
 This tool will allow us to have a public IP map directly with our local machine
 
+<div align="center">
+
 <img src="https://github.com/Tony-Dja/Jenkins_pipeline_HEROKU_deployment/blob/d3754d6c9259776faa86a09faf651629c385c5fd/screenshots/ngrock.png">
 <img src="https://github.com/Tony-Dja/Jenkins_pipeline_HEROKU_deployment/blob/d3754d6c9259776faa86a09faf651629c385c5fd/screenshots/ngrock2.png">
+
+</div>
