@@ -237,6 +237,18 @@ After creating your account, you have to recover and copy you API key, which wil
 
 </div>
 
+<strong>Connect your HEROKU account with your Jenkins server</strong>
+
+Now, go to your Jenkins server, and manage credentials.<br/>
+Create new credentials with the ID "HEROKU_API_KEY".
+
+<div align="center">
+
+<img src="https://github.com/Tony-Dja/Jenkins_pipeline_HEROKU_deployment/blob/649dc12fad74aa452500865bba8cbe07369d21ef/screenshots/heroku-api.png">
+
+</div>
+
+
 Jenkins file
 ----------------------
 
