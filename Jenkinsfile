@@ -31,6 +31,7 @@ pipeline {
                 }
             } 
         }
+        /* Just Replace the IP address of ENV var "LOCALHOST_DOCKER_NETWORK" with your own local Docker container IP
         stage('Test image') {
             agent any
             steps {
@@ -39,6 +40,7 @@ pipeline {
                 }
             } 
         }
+        */
         stage('Clean container') {
             agent any
             steps {
