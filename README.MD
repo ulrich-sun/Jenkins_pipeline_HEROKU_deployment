@@ -145,6 +145,8 @@ This tool will allow us to have a public IP map directly with our local machine
 
 - <a href="https://ngrok.com/" target="_blank">https://ngrok.com/</a>
 
+<br/>
+
 2 - Create a Tunnel Authtokens :
 
 <div align="center">
@@ -152,6 +154,8 @@ This tool will allow us to have a public IP map directly with our local machine
 <img src="https://github.com/Tony-Dja/Jenkins_pipeline_HEROKU_deployment/blob/27ab5208a26e08801a3d00a8f597f13a34ddab52/screenshots/ngrock-token.png">
 
 </div>
+
+<br/>
 
 3 - Install NGROK agent :
 
@@ -165,13 +169,21 @@ curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc | \
   sudo apt update && sudo apt install ngrok
 ```
 
+<br/>
+
 4 - Connect the agent with your NGROCK account :
 
 ```
 ngrok config add-authtoken <TOKEN>
 ```
 
+<br/>
+
 5 - Connect your local machine to NGROCK :
+
+```
+ngrok http http://localhost:8080
+```
 
 <div align="center">
 
