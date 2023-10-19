@@ -233,7 +233,7 @@ After creating your account, you have to recover and copy you API key, which wil
 
 <div align="center">
 
-<img src="https://github.com/Tony-Dja/Jenkins_pipeline_HEROKU_deployment/blob/0b040058be5819e1e61dd1a6d10e215b89f7a2fc/screenshots/webhook-check.png">
+<img src="https://github.com/Tony-Dja/Jenkins_pipeline_HEROKU_deployment/blob/649dc12fad74aa452500865bba8cbe07369d21ef/screenshots/heroku-api.png">
 
 </div>
 
@@ -241,4 +241,10 @@ Jenkins file
 ----------------------
 
 All the pipeline is configured in the Jenkins file.
+
+<div align="center">
+
+<img src="https://github.com/Tony-Dja/Jenkins_pipeline_HEROKU_deployment/blob/649dc12fad74aa452500865bba8cbe07369d21ef/screenshots/jenkins-stage.png">
+
+</div>
 
