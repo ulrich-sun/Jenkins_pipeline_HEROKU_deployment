@@ -13,8 +13,7 @@
 </div>
 
 
-
-Creation of a Jenkins pipeline + Deploying App on HEROKU
+Website contenerization + JENKINS pipeline + HEROKU deployment
 ----------------------
 
  <br />
