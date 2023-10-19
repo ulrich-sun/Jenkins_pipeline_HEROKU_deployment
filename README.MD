@@ -137,3 +137,42 @@ This tool will allow us to have a public IP map directly with our local machine
 <img src="https://github.com/Tony-Dja/Jenkins_pipeline_HEROKU_deployment/blob/d3754d6c9259776faa86a09faf651629c385c5fd/screenshots/ngrock2.png">
 
 </div>
+
+
+1 - First, create a account on ngrock.com:
+
+- <a href="https://ngrok.com/" target="_blank">https://ngrok.com/</a>
+
+2 - Create a Tunnel Authtokens :
+
+<div align="center">
+
+<img src="https://github.com/Tony-Dja/Jenkins_pipeline_HEROKU_deployment/blob/d3754d6c9259776faa86a09faf651629c385c5fd/screenshots/ngrock.png">
+
+</div>
+
+3 - Install NGROK agent :
+
+- <a href="https://ngrok.com/docs/getting-started/?os=linux" target="_blank">https://ngrok.com/docs/getting-started/?os=linux</a>
+
+```
+curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc | \
+  sudo tee /etc/apt/trusted.gpg.d/ngrok.asc >/dev/null && \
+  echo "deb https://ngrok-agent.s3.amazonaws.com buster main" | \
+  sudo tee /etc/apt/sources.list.d/ngrok.list && \
+  sudo apt update && sudo apt install ngrok
+```
+
+4 - Connect the agent with your NGROCK account :
+
+```
+ngrok config add-authtoken <TOKEN>
+```
+
+5 - Connect your local machine to NGROCK :
+
+<div align="center">
+
+<img src="https://github.com/Tony-Dja/Jenkins_pipeline_HEROKU_deployment/blob/d3754d6c9259776faa86a09faf651629c385c5fd/screenshots/ngrock.png">
+
+</div>
