@@ -138,8 +138,10 @@ This tool will allow us to have a public IP map directly with our local machine
 
 </div>
 
+<br/>
+<br/>
 
-1 - First, create a account on ngrock.com:
+1 - First, create your account on ngrock.com:
 
 - <a href="https://ngrok.com/" target="_blank">https://ngrok.com/</a>
 
@@ -147,7 +149,7 @@ This tool will allow us to have a public IP map directly with our local machine
 
 <div align="center">
 
-<img src="https://github.com/Tony-Dja/Jenkins_pipeline_HEROKU_deployment/blob/d3754d6c9259776faa86a09faf651629c385c5fd/screenshots/ngrock.png">
+<img src="https://github.com/Tony-Dja/Jenkins_pipeline_HEROKU_deployment/blob/27ab5208a26e08801a3d00a8f597f13a34ddab52/screenshots/ngrock-token.png">
 
 </div>
 
@@ -173,6 +175,6 @@ ngrok config add-authtoken <TOKEN>
 
 <div align="center">
 
-<img src="https://github.com/Tony-Dja/Jenkins_pipeline_HEROKU_deployment/blob/d3754d6c9259776faa86a09faf651629c385c5fd/screenshots/ngrock.png">
+<img src="https://github.com/Tony-Dja/Jenkins_pipeline_HEROKU_deployment/blob/27ab5208a26e08801a3d00a8f597f13a34ddab52/screenshots/ngrock-ip.png">
 
 </div>
