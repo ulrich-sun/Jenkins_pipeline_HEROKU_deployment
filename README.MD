@@ -137,29 +137,26 @@ This tool will allow us to have a public IP map directly with our local machine
 <img src="https://github.com/Tony-Dja/Jenkins_pipeline_HEROKU_deployment/blob/d3754d6c9259776faa86a09faf651629c385c5fd/screenshots/ngrock2.png">
 
 </div>
-
 <br/>
 <br/>
 
-1 - First, create your account on ngrock.com:
+<strong>1 - First, create your account on ngrock.com :</strong>
 
 - <a href="https://ngrok.com/" target="_blank">https://ngrok.com/</a>
-
 <br/>
 <br/>
 
-2 - Create a Tunnel Authtokens :
+<strong>2 - Create a Tunnel Authtokens :</strong>
 
 <div align="center">
 
 <img src="https://github.com/Tony-Dja/Jenkins_pipeline_HEROKU_deployment/blob/27ab5208a26e08801a3d00a8f597f13a34ddab52/screenshots/ngrock-token.png">
 
 </div>
-
 <br/>
 <br/>
 
-3 - Install NGROK agent :
+<strong>3 - Install NGROK agent :</strong>
 
 - <a href="https://ngrok.com/docs/getting-started/?os=linux" target="_blank">https://ngrok.com/docs/getting-started/?os=linux</a>
 
@@ -170,20 +167,18 @@ curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc | \
   sudo tee /etc/apt/sources.list.d/ngrok.list && \
   sudo apt update && sudo apt install ngrok
 ```
-
 <br/>
 <br/>
 
-4 - Connect the agent with your NGROCK account :
+<strong>4 - Connect the agent with your NGROCK account :</strong>
 
 ```
 ngrok config add-authtoken <TOKEN>
 ```
-
 <br/>
 <br/>
 
-5 - Connect your local machine to NGROCK :
+<strong>5 - Connect your local machine to NGROCK :</strong>
 
 ```
 ngrok http http://localhost:8080
@@ -195,11 +190,14 @@ ngrok http http://localhost:8080
 
 </div>
 
+<br/>
+<br/>
+
 Your public address is the https "Forwarding" address.<br/>
 You can check that all is ok into your browser. You must arrive on your jenkins server.
 
 <div align="center">
 
-<img src="https://github.com/Tony-Dja/Jenkins_pipeline_HEROKU_deployment/blob/27ab5208a26e08801a3d00a8f597f13a34ddab52/screenshots/ngrock-ip.png">
+<img src="https://github.com/Tony-Dja/Jenkins_pipeline_HEROKU_deployment/blob/c7694ba66bf3d8b245a6eb1b24fd21bd0097b630/screenshots/jenkins-server.png">
 
 </div>
