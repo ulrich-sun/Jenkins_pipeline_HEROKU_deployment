@@ -146,6 +146,7 @@ This tool will allow us to have a public IP map directly with our local machine
 - <a href="https://ngrok.com/" target="_blank">https://ngrok.com/</a>
 
 <br/>
+<br/>
 
 2 - Create a Tunnel Authtokens :
 
@@ -155,6 +156,7 @@ This tool will allow us to have a public IP map directly with our local machine
 
 </div>
 
+<br/>
 <br/>
 
 3 - Install NGROK agent :
@@ -170,6 +172,7 @@ curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc | \
 ```
 
 <br/>
+<br/>
 
 4 - Connect the agent with your NGROCK account :
 
@@ -178,12 +181,22 @@ ngrok config add-authtoken <TOKEN>
 ```
 
 <br/>
+<br/>
 
 5 - Connect your local machine to NGROCK :
 
 ```
 ngrok http http://localhost:8080
 ```
+
+<div align="center">
+
+<img src="https://github.com/Tony-Dja/Jenkins_pipeline_HEROKU_deployment/blob/27ab5208a26e08801a3d00a8f597f13a34ddab52/screenshots/ngrock-ip.png">
+
+</div>
+
+Your public address is the https "Forwarding" address.<br/>
+You can check that all is ok into your browser. You must arrive on your jenkins server.
 
 <div align="center">
 
