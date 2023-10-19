@@ -439,7 +439,7 @@ You can change the other environnement variables as you wish.
 
 <strong>STAGING and PRODUCTION deployment</strong>
 
-Just an important step. For deploy our App in these 2 stages, we use a Docker agent with a franela/dind image.<br/>
+Just an important step. For deploying the App in these 2 stages, we use a Docker agent with a franela/dind image.<br/>
 We must run the stages into a Docker container to be able to install the HEROKU CLI, log in and push.
 <br />
 
@@ -484,6 +484,7 @@ You can check the Stage view into Jenkins
 <img src="https://github.com/Tony-Dja/Jenkins_pipeline_HEROKU_deployment/blob/649dc12fad74aa452500865bba8cbe07369d21ef/screenshots/jenkins-stage.png">
 
 </div>
+<br/>
 
 When the pipeline is finished, go to your HEROKU account and check that your 2 applications STAGING and PRODUCTION are well deployed.
 
@@ -492,6 +493,7 @@ When the pipeline is finished, go to your HEROKU account and check that your 2 a
 <img src="https://github.com/Tony-Dja/Jenkins_pipeline_HEROKU_deployment/blob/9b6e3bd78628b7540782098caf9b472513828b09/screenshots/heroku-stage.png">
 
 </div>
+<br/>
 
 Click on it and check that your web Dyno is ON.
 
@@ -499,14 +501,15 @@ Click on the "open App" button.
 
 <div align="center">
 
-<img src="https://github.com/Tony-Dja/Jenkins_pipeline_HEROKU_deployment/blob/9b6e3bd78628b7540782098caf9b472513828b09/screenshots/heroku-stage.png">
+<img src="https://github.com/Tony-Dja/Jenkins_pipeline_HEROKU_deployment/blob/6ad68b4c8e3e5557ac209ea58c0f24412fe3e554/screenshots/heroku-on.png">
 
 </div>
+<br/>
 
-Enjoy !
+Enjoy ! your website is on the Cloud...
 
 <div align="center">
 
-<img src="https://github.com/Tony-Dja/Jenkins_pipeline_HEROKU_deployment/blob/9b6e3bd78628b7540782098caf9b472513828b09/screenshots/heroku-stage.png">
+<img src="https://github.com/Tony-Dja/Jenkins_pipeline_HEROKU_deployment/blob/6ad68b4c8e3e5557ac209ea58c0f24412fe3e554/screenshots/heroku-app.png">
 
 </div>
