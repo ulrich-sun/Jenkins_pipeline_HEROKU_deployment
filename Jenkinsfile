@@ -111,4 +111,11 @@ pipeline {
             heroku container:login
             heroku create ${PRODUCTION} || echo 'project already exists'
             heroku container:push -a ${PRODUCTION} web
-            heroku
+            heroku container:push -a $PRODUCTION web
+            heroku container:release -a $PRODUCTION web
+            '''
+          }
+        }
+     }
+  }
+}
