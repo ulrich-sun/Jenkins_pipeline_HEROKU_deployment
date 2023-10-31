@@ -25,7 +25,7 @@ pipeline {
                  sh '''
                     echo "Clean Environment"
                     docker rm -f $IMAGE_NAME || echo "container does not exist"
-                    docker run --name $IMAGE_NAME -d -p 3000:80 ${ID_DOCKER}/$IMAGE_NAME:$IMAGE_TAG
+                    docker run --name $IMAGE_NAME -d -p 3001:80 ${ID_DOCKER}/$IMAGE_NAME:$IMAGE_TAG
                     sleep 5
                  '''
                }
@@ -35,7 +35,7 @@ pipeline {
            agent any
            steps {
               script {
-                sh ' curl http://localhost:3000 | grep -q "Enjoy"'
+                sh ' curl http://localhost:3001 | grep -q "Enjoy"'
               }
            }
       }
