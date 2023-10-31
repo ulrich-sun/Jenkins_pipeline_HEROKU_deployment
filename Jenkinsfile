@@ -70,7 +70,12 @@ pipeline {
        when {
               expression { GIT_BRANCH == 'origin/main' }
             }
-        agent any
+        agent {
+           docker {
+             image 'alpine:latest'
+             args '-u root'
+          }
+       }
       environment {
           HEROKU_API_KEY = credentials('HEROKU_API_KEY')
       }  
@@ -96,7 +101,12 @@ pipeline {
        when {
               expression { GIT_BRANCH == 'origin/production' }
             }
-      agent any
+      agent {
+           docker {
+             image 'alpine:latest'
+             args '-u root'
+          }
+       }
       environment {
           HEROKU_API_KEY = credentials('heroku_api_key')
       }  
