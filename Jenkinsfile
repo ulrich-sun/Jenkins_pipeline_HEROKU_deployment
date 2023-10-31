@@ -35,9 +35,7 @@ pipeline {
            agent any
            steps {
               script {
-                sh '''
-                    curl http://172.17.0.1:3000 | grep -q "Hello world!"
-                '''
+                sh ' curl http://172.17.0.1:3000 | grep -q "Enjoy"'
               }
            }
       }
