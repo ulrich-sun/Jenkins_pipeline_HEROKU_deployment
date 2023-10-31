@@ -1,7 +1,7 @@
 pipeline {
   environment {
     ID_DOCKER = "ulrichnoumsi"
-    IMAGE_NAME = "test"
+    IMAGE_NAME = "ulrich"
     IMAGE_TAG = "latest"
     STAGING = "${ID_DOCKER}-staging"
     PRODUCTION = "${ID_DOCKER}-production"
