@@ -2,7 +2,7 @@ pipeline {
      environment {
        //ID_DOCKER = "${ID_DOCKER_PARAMS}"
        ID_DOCKER = "ulrichnoumsi"
-       IMAGE_NAME = "helloworld"
+       IMAGE_NAME = "test"
        IMAGE_TAG = "latest"
 //       PORT_EXPOSED = "80" à paraméter dans le job
        STAGING = "${ID_DOCKER}-staging"
@@ -35,7 +35,7 @@ pipeline {
            agent any
            steps {
               script {
-                sh ' curl http://172.17.0.1:3000 | grep -q "Enjoy"'
+                sh ' curl http://localhost:3000 | grep -q "Enjoy"'
               }
            }
       }
