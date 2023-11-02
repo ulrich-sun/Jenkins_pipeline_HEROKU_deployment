@@ -2,7 +2,7 @@ pipeline {
      environment {
        //ID_DOCKER = "${ID_DOCKER_PARAMS}"
        ID_DOCKER = "ulrichnoumsi"
-       IMAGE_NAME = "test"
+       IMAGE_NAME = "alpinehelloworld"
        IMAGE_TAG = "latest"
 //       PORT_EXPOSED = "80" à paraméter dans le job
        STAGING = "${ID_DOCKER}-staging"
